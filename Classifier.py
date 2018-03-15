@@ -75,3 +75,12 @@ prediction["Logistic"]=y_pred.predict(x_test_df)
 accuracy_score(y_test,prediction["Logistic"])
 #Accuracy score is 0.971
 
+#Gardient Boosting
+clf = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0,
+                            max_depth=1, random_state=0)
+clf.fit(x_train_df,y_train)
+y_pred=clf.fit(x_train_df,y_train)
+prediction["Trees"]=y_pred.predict(x_test_df)
+accuracy_score(y_test,prediction["Trees"])
+
+#Accuracy score is 0.94
