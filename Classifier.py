@@ -13,7 +13,6 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 data=pd.read_csv("spam.csv",encoding='latin-1')
 
-data.head()
 
 data=data.drop(['Unnamed: 2','Unnamed: 3','Unnamed: 4'],1)
 data=data.rename(columns={"v1":"Classification","v2":"SMS"})
