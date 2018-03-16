@@ -90,6 +90,6 @@ clf=MLPClassifier(solver='lbfgs', alpha=1e-5,hidden_layer_sizes=(5, 2), random_s
 clf.fit(x_train_df,y_train)
 y_pred=clf.fit(x_train_df,y_train)
 prediction["MLP"]=y_pred.predict(x_test_df)
-accuracy_score(y_test,prediction["neural"])
+accuracy_score(y_test,prediction["MLP"])
 
 #Accuracy score is 0.99
