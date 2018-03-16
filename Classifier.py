@@ -10,6 +10,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn import svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.neural_network import MLPClassifier
 
 data=pd.read_csv("spam.csv",encoding='latin-1')
 
@@ -83,3 +84,12 @@ prediction["Trees"]=y_pred.predict(x_test_df)
 accuracy_score(y_test,prediction["Trees"])
 
 #Accuracy score is 0.94
+
+#MLP classification
+clf=MLPClassifier(solver='lbfgs', alpha=1e-5,hidden_layer_sizes=(5, 2), random_state=1)
+clf.fit(x_train_df,y_train)
+y_pred=clf.fit(x_train_df,y_train)
+prediction["MLP"]=y_pred.predict(x_test_df)
+accuracy_score(y_test,prediction["neural"])
+
+#Accuracy score is 0.99
