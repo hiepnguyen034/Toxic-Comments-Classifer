@@ -11,6 +11,7 @@ from sklearn import svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score
 
 data=pd.read_csv("spam.csv",encoding='latin-1')
 
