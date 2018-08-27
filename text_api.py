@@ -23,7 +23,6 @@ def check_text(text):
     text = pad_sequences(text, maxlen=150)
     model=load_model('toxic_classifier_model.h5')
     result=model.predict(text)
-    print(result)
     if result[0][0]>=0.88 or result[0][1]>=0.7 :
         status='The message might be inappropriate.'
     elif result[0][4]==0.7 or result[0][5]>=0.7:
