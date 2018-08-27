@@ -47,12 +47,10 @@ for i in types:
     log_test.append(clf_model(data,i,'logistic'))
 
 tree_test=[]
-types = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 for i in types:
     tree_test.append(clf_model(data,i,'tree'))
 
 neural_test=[]  
-types = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 for i in types:
     neural_test.append(clf_model(data,i,'mlp'))
 
