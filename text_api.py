@@ -3,7 +3,7 @@ import urllib.parse
 import timeit
 import json
 import requests
-import sys 
+import sys
 import os
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
@@ -19,13 +19,14 @@ def check_text(text):
     text=[text]
     with open('tokenizer.pickle', 'rb') as handle:
         tok = pickle.load(handle)
-    text = tok.texts_to_sequences(text)  
+    text = tok.texts_to_sequences(text)
     text = pad_sequences(text, maxlen=150)
     model=load_model('toxic_classifier_model.h5')
-    result=model.predict(text).round()
-    if result[0][0]==1 or result[0][1]==1 :
+    result=model.predict(text)
+    print(result)
+    if result[0][0]>=0.88 or result[0][1]>=0.7 :
         status='The message might be inappropriate.'
-    elif result[0][4]==1 or result[0][5]==1:
+    elif result[0][4]==0.7 or result[0][5]>=0.7:
         status='The message includes offensive contents'
     else:
         status='This message is clean'
@@ -44,8 +45,8 @@ def content_handler():
     result_dict={'text':text,
           'response':status}
     result_json = json.dumps(result_dict)
-    
+
     return result_json
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",debug=True)
+    app.run(debug=True)
