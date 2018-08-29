@@ -10,7 +10,7 @@ from keras.preprocessing.sequence import pad_sequences
 
 import pickle
 
-sys.path.append(os.path.abspath("./Users/Hiep Nguyen/"))
+#sys.path.append(os.path.abspath("./Users/Hiep Nguyen/"))
 
 
 app = Flask(__name__)
