@@ -25,7 +25,7 @@ def check_text(text):
     result=model.predict(text)
     if result[0][0]>=0.88 or result[0][1]>=0.7 :
         status='The message might be inappropriate.'
-    elif result[0][4]==0.7 or result[0][5]>=0.7:
+    elif result[0][4]>=0.7 or result[0][5]>=0.7:
         status='The message includes offensive contents'
     else:
         status='This message is clean'
