@@ -7,5 +7,5 @@ This repository contains two approaches to deal with toxic comments.
 
 The first approach is to use three classification models, including logistic regression, gardient boosting trees, and multilayer perceptron models to train each type of toxic comments (toxic, severe toxic,obscene, threat, insult, and identity hate) seperately. The resutls after testing the models are summarized in the Accuracy.csv file.
 
-The second approach is to use LSTM models.
+The second approach is to use a LSTM model.
 WARNING: The visualizations contain offensive words
